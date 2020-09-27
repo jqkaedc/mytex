@@ -1,0 +1,192 @@
+\documentclass[a3paper]{book}
+%\usepackage{XeCJK}%中文
+\usepackage{amsmath}%数学
+\usepackage{lastpage}%页数统计
+\usepackage{fancyhdr}%页眉页脚
+\usepackage[UTF8]{ctex}%中文
+\usepackage{indentfirst}%首行缩进
+\setlength{\parindent}{2em}
+\usepackage{titlesec}%标题样式
+\usepackage{fontspec} %字体样式
+\usepackage{array}%对齐
+\usepackage[top=2.5cm,bottom=2.5cm,left=3cm,right=3cm]{geometry}
+\usepackage[utf8]{inputenc} %从其他文件插入对象
+\usepackage{graphicx} %插入图片
+\usepackage{float}%固定图片位置
+\usepackage{ulem}%下划线
+\usepackage{background} %背景
+\usepackage{pdfpages}
+
+\newif\ifprint%答案显隐
+\printfalse
+%\printtrue
+\newcommand{\blank}[2][3cm]{\makebox[#1][c]{%
+		\ifprint
+		\phantom{#2}%
+		\else
+		#2%
+		\fi}}
+
+\newcommand{\blanku}[2][3cm]{\uline{\makebox[#1][c]{%
+		\ifprint
+		\phantom{#2}%
+		\else
+		#2%
+		\fi}}}
+
+
+\SetBgContents{}  %使设置背景后不会出现“Draft”水印
+\setCJKmainfont{SimSun} %设置中文默认字体
+\setCJKmonofont{SimSun}
+\newcommand {\st} {\CJKfamily{SimSun}}
+\setmainfont{Times New Roman}%设置英文默认字体
+\newcommand {\trm} {\CJKfamily{Times New Roman}}
+
+%%导言区开始%%
+%%字号设置%%
+\newcommand{\dy}{\fontsize{70pt}{\baselineskip}\selectfont}
+
+\newcommand{\de}{\fontsize{65pt}{\baselineskip}\selectfont}
+
+\newcommand{\ds}{\fontsize{60pt}{\baselineskip}\selectfont}
+
+\newcommand{\dsi}{\fontsize{50pt}{\baselineskip}\selectfont}
+
+\newcommand{\chuhao}{\fontsize{42.2pt}{\baselineskip}\selectfont}
+
+\newcommand{\xiaochu}{\fontsize{36.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\yihao}{\fontsize{26.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\xiaoyi}{\fontsize{24.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\erhao}{\fontsize{22.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\xiaoer}{\fontsize{18.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\sanhao}{\fontsize{16.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\xiaosan}{\fontsize{15.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\sihao}{\fontsize{14.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\xiaosi}{\fontsize{12.1pt}{\baselineskip}\selectfont}
+
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+
+\newcommand{\xiaowu}{\fontsize{9.0pt}{\baselineskip}\selectfont}
+
+\newcommand{\liuhao}{\fontsize{7.5pt}{\baselineskip}\selectfont}
+
+\newcommand{\xiaoliu}{\fontsize{6.5pt}{\baselineskip}\selectfont}
+
+\newcommand{\qihao}{\fontsize{5.5pt}{\baselineskip}\selectfont}
+
+\newcommand{\bahao}{\fontsize{5.0pt}{\baselineskip}\selectfont}
+
+%%字体设置%%
+
+\setCJKfamilyfont{hwxw}{STXinwei}
+\newcommand {\hwxw} {\CJKfamily{hwxw}}
+\setCJKfamilyfont{hwzs}{STZhongsong}
+\newcommand {\hwzs} {\CJKfamily{hwzs}}
+\setCJKfamilyfont{xst}{NSimSun}
+\newcommand {\xst} {\CJKfamily{xst}}
+\setCJKfamilyfont{ht}{SimHei}
+\newcommand {\hti} {\CJKfamily{ht}}
+
+%%封面%%
+
+\title{\centering \dy \hwzs 分析化学
+	
+	\hspace*{\fill}
+	
+	 \hwxw \xiaochu  Analytical Chemistry
+	
+
+	\dy \quad\quad\quad —\dsi 习题勘误
+	
+	\hspace*{\fill}
+}
+\date{}
+\author{}
+
+%%标题样式%%
+
+\titleformat{\chapter}{\centering\erhao\hwxw}{第\,\thechapter\,章}{1em}{}
+
+\titleformat{\section}{\flushleft\sihao\heiti}{\thesection}{1em}{}
+
+\titleformat{\subsection}{\flushleft\xiaosi\heiti}{\thesubsection}{1em}{}
+
+
+%%页眉页脚%%
+
+\pagestyle{fancy}
+\lhead{}
+\chead{分析化学常见公式推导 }
+\rhead{}
+\lfoot{作者: Jqkaedc}
+\cfoot{第\thepage 页}
+\rfoot{共\pageref{LastPage} 页}
+\renewcommand{\headrulewidth}{0.75pt}%改为0pt即可去掉页眉下面的横线
+\renewcommand{\footrulewidth}{0.75pt}%改为0pt即可去掉页脚上面的横线
+
+
+%%导言区结束%%
+
+\begin{document}
+	\maketitle
+	
+	\pagestyle{empty}
+	\tableofcontents
+	
+\newpage
+	\pagestyle{fancy}
+	\pagenumbering{Roman}
+	\chapter{\erhao 修约与误差}
+
+
+
+\newpage
+	\pagestyle{fancy}
+	\pagenumbering{Roman}
+	\chapter{\erhao 酸碱中和滴定}
+
+\xiaosi \heiti 1.已知$Na_{2}CO_{3},NaHCO_{3}$混合液的pH=10.55，取25.00mL，用$0.1000mol·L^{-1}$的HCl滴定。当pH=6.38时，消耗HCl 21.00mL，求$Na_{2}CO_{3}\mbox{和}NaHCO_{3}$的浓度。(已知$pK_{a_{1}}=6.38,pK_{a_{2}}=10.25$)
+\hfill [\hwxw 分析化学学习与考研指津\quad 樊行雪 \quad $P_{58}$\quad $T_{3}$]
+
+\includepdf[pages={1}]{1.pdf}
+
+\newpage
+	\pagestyle{fancy}
+	\pagenumbering{Roman}
+	\chapter{\erhao 络合滴定}
+	
+\newpage
+	\pagestyle{fancy}
+	\pagenumbering{Roman}
+	\chapter{\erhao 氧化还原滴定}
+	
+	
+\newpage
+	\pagestyle{fancy}
+	\pagenumbering{Roman}
+	\chapter{\erhao 沉淀滴定}
+		
+\newpage
+	\pagestyle{fancy}
+	\pagenumbering{Roman}
+	\chapter{\erhao 重量分析}
+	
+\newpage
+	\pagestyle{fancy}
+	\pagenumbering{Roman}
+	\chapter{\erhao 光度分析}
+	
+\newpage
+	\pagestyle{fancy}
+	\pagenumbering{Roman}
+	\chapter{\erhao 薄层色谱分析}
+\end{document}
+
