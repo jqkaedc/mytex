@@ -1,0 +1,189 @@
+\documentclass[28pt,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{amsmath}
+\usepackage{geometry} 
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{color}
+\usepackage{pifont}
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\chuhao}{\fontsize{42pt}{44.9pt}\selectfont}    % 初号, 1.5倍行距
+\newcommand{\xiaochu}{\fontsize{30pt}{40pt}\selectfont}    % 小初, 1.5倍行距
+\newcommand{\yihao}{\fontsize{26pt}{36pt}\selectfont}    % 一号, 1.4倍行距
+\newcommand{\erhao}{\fontsize{22pt}{28pt}\selectfont}    % 二号, 1.25倍行距
+\newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}    % 小二, 单倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{24pt}\selectfont}    % 三号, 1.5倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}    % 小三, 1.5倍行距
+\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}    % 四号, 1.5倍行距
+\newcommand{\banxiaosi}{\fontsize{13pt}{19.5pt}\selectfont}    % 半小四, 1.5倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}    % 小四, 1.5倍行距
+\newcommand{\dawuhao}{\fontsize{11pt}{11pt}\selectfont}    % 大五号, 单倍行距
+\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}    % 五号, 单倍行距
+\newcommand{\xiaowu}{\fontsize{9pt}{9pt}\selectfont}    % 五号, 单倍行距
+%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand\thepart{\Roman{Part I}}
+%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper,left=25mm,right=20mm,top=25mm,bottom=25mm}
+%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}                   % 设置页眉页脚
+\lhead{page \thepage\ of \pageref{LastPage}}   %页眉左侧显示页数                 
+\chead{}                                  %页眉中
+\rhead{\small\leftmark}                         %章节信息                       
+\cfoot{\thepage}                                %当前页，记得调用前文提到的宏包        
+\rfoot{}%                                                       
+\lfoot{}
+\renewcommand{\headrulewidth}{0.1mm} %页眉线宽，设为0可以去页眉线
+\renewcommand{\footrulewidth}{0mm} %页脚线宽，设为0可以去页脚线
+%%%%%%%%%%%%%%%%%%%%%%
+\title{\chuhao \textbf{\textcolor{blue}{Quantum Chemistry Notebook}}}
+\author{\huge \textbf{\textcolor{blue}{Jqkaewolf}}}
+\date{\huge \textcolor{blue}{February 2021}}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\tableofcontents
+\part{Foundation of Math Knowledge}
+\chapter{Advanced mathematics}
+\section{introduction}
+\section{introduction}
+\section{introduction}
+\section{introduction}
+\erhao$$\langle f|\hat{A}|f\rangle=\langle f|\hat{A}|f\rangle^{*}$$
+\newpage
+$$\hat{H}\Psi=E\Psi$$
+\part{Assumptions of quantum mechanics}
+\setcounter{chapter}{0}
+\chapter{Assumptions of quantum mechanics}
+\section{Wave function}
+\sihao\textbf{ }
+\textbf{Wave function}
+
+微观粒子的运动状态可以用波函数来描述，波函数是以体系所有粒子坐标和时间为变量的函数.
+
+\textbf{ }
+
+\textbf{Probability density}
+
+波函数本身不是可观测物理量，而波函数与其复共轭乘积是可观测物理量，称为概率密度.
+
+\textbf{ }
+
+\textbf{Simplified writing of wave functions}
+
+为简化波函数的表达形式，可以采用狄拉克符号表示波函数，如:
+$$\langle m \mid \Longleftrightarrow  \Psi_{m}^{*}(x)\textbf{ }\textbf{ }\textbf{ }\mid n \rangle \Longleftrightarrow  \Psi_{n}(x)\textbf{ }\textbf{ }\textbf{ }\int \Psi^{*}_{m}(x)\Psi_{n}(x)dx \Longleftrightarrow  \langle m \mid n \rangle$$
+
+\textbf{ }
+
+\textbf{Normalized}
+
+概率密度与微分相乘在整个空间上的积分即为找到该粒子的概率，因为在整个空间找到该粒子的概率一定是1，因此有必要对波函数进行归一化处理.
+
+\textbf{ }
+
+\textbf{Requirements of wave function}
+
+首先，波函数的平方表示概率密度，这要求波函数必须满足单值性；
+
+其次，因为求解波函数的波动方程过程中用到波函数的求导求微分等操作，因此在数学上要求波函数以及它的一阶导函数要满足连续可微；
+
+满足以上特点的波函数称为品优(well-behaved)波函数，描述微观粒子体系的波函数必须为品优波函数.
+
+\section{Observable physical quantity and Operator}
+\textbf{ }\textbf{ }
+经典力学中每一个可观测物理量(坐标、动量、动能、势能等)在量子力学中均有与之对应的算符.
+
+位置算符$\hat{x}=x$与动量算符$\hat{p}=-i\hbar(\textbf{i}\frac{\partial}{\partial x}+\textbf{j}\frac{\partial}{\partial y}+\textbf{k}\frac{\partial}{\partial z})$是两个比较重要的算符，其余算符大多都可以从这两个算符中得出，如动能算符$\hat{T}=\frac{\hat{p}^{2}}{2m}=-\frac{\hbar^{2}}{2m}\nabla^{2}$，势能算符$\hat{V}_{(x,y,z)}=V_{(x,y,z)}$，总能量算符$\hat{H}=-\frac{\hbar^{2}}{2m}\nabla^{2}+V_{(x,y,z)}$
+
+\section{Operator and eigenvalue}
+\textbf{ }\textbf{ }
+量子力学中，算符对应的量都可以被测量，在对某一可观测物理量的任意一次测量中，测得的值只能是该物理量对应算符的本征值，且本征值满足本征方程:$\hat{A}\Psi_{n}=a_{n}\Psi_{n}$
+
+在表示$\int \Psi_{m}^{*}(x)\hat{A}\Psi_{n}(x)dx$这个积分时,可以使用狄拉克符号来简化表示为$\langle m \mid \hat{A} \mid n \rangle$
+\section{Wave function,Operator and Eigenvalue}
+\textbf{ }\textbf{ }
+当波函数是算符$\hat{A}$的本征函数时:
+\begin{align*}
+\langle A\rangle&=\int\Psi^{*}\hat{A}\Psi d \tau=a_{k}\int\Psi^{*}\hat{A}\Psi d \tau=a_{k}\\
+\langle A^{2}\rangle&=\int\Psi^{*}\hat{A}^{2}\Psi d \tau=a_{k}\int\Psi^{*}\hat{A}\Psi d \tau=a_{k}^{2}\int\Psi^{*}\Psi d \tau=a_{k}^{2}
+\end{align*}
+\textbf{ }\textbf{ }
+当波函数$\Psi$不是算符$\hat{A}$的本征函数时,它可以是本征函数$\Psi_{1}$、$\Psi_{2}$线性组合:
+$$\Psi=c_{1}\Psi_{1}+c_{2}\Psi_{2} \hspace{15} \left(c_{1}\neq0,c_{2}\neq 0 \right)$$
+\textbf{ }\textbf{ }
+此时，测量得到两个本征值均有可能，测量前不能预测得到哪个本征值，只能评估测得每个本征值的概率.
+
+据此，已知体系的波函数$\Psi$就可以计算可观测量的确定值.
+
+将两个算符作用在一个函数上，当交换作用顺序时($\hat{A}\hat{B}f(x)\to \hat{B}\hat{A}f(x)$)，作用得到的结果相同，则称两算符是对易的，记作:$[\hat{A},\hat{B}]=\hat{A}\hat{B}-\hat{B}\hat{A}=0$.
+
+在海森堡不确定性原理中指出，微观粒子的动量与位置坐标不可同时拿到确定值，这是由于动量算符与坐标算符不对易，因此不能同时测得确定值.
+
+Proof:
+\begin{align*}
+[\hat{p},\hat{x}]f(x)&=\hat{p}\hat{x}f(x)-\hat{x}\hat{p}f(x)=-i\hbar\frac{\partial xf(x)}{\partial x}-\left(-ix\hbar\frac{\partial f(x)}{\partial x}\right)\\
+&=-i\hbar\left[x\frac{\partial f(x)}{\partial x}+f(x)-x\frac{\partial f(x)}{\partial x}\right]=-i\hbar f(x)\neq 0
+\end{align*}
+上面给出证明两算符不对易的过程，对于不对易的两算符对应的物理量不能同时求得确定值.
+
+对于不对易的两个算符，可以用方差来衡量:
+\begin{align*}
+    \sigma_{A}^{2}&=\int\Psi^{*}(\hat{A}-\langle\hat{A}\rangle)^{2}\Psi d\tau\\
+    \sigma_{B}^{2}&=\int\Psi^{*}(\hat{B}-\langle\hat{B}\rangle)^{2}\Psi d\tau\\
+    \sigma_{A}^{2}\sigma_{B}^{2}&=\int\Psi^{*}(\hat{A}-\langle\hat{A}\rangle)^{2}\Psi d\tau\int\Psi^{*}(\hat{B}-\langle\hat{B}\rangle)^{2}\Psi d\tau\\
+    &=\int\Psi^{*}(\hat{A}^{2}-2\hat{A}\langle\hat{A}\rangle+\langle\hat{A}\rangle^{2})\Psi d\tau\int\Psi^{*}(\hat{B}^{2}-2\hat{B}\langle\hat{B}\rangle+\langle\hat{B}\rangle^{2})\Psi d\tau
+\end{align*}
+
+\section{Requirements for mechanical operators}
+\textbf{ }\textbf{ }
+对于力学量对应的算符，要求其具有线性和厄米性.
+
+线性算符的数学表述:
+$$\hat{A}[c_{1}f_{1}(x)+c_{2}(x)]=c_{1}\hat{A}f_{1}(x)+c_{2}\hat{A}f_{2}(x)$$
+
+厄米算符的两种数学表述:
+$$\langle f \mid \hat{A} \mid g \rangle=[\langle g \mid \hat{A} \mid f \rangle]^{*}$$
+$$\langle f \mid \hat{A} \mid f \rangle=[\langle f \mid \hat{A} \mid f \rangle]^{*}$$.
+下面给出关于两种表述等价的证明.
+
+Proof:
+
+$\mbox{给出两个波函数}\Psi_{a}\mbox{与}\Psi_{b}\mbox{其中}\Psi_{a}=\Psi_{1}+\Psi_{2},\Psi_{b}=\Psi_{1}+i\Psi_{2}$
+\begin{align*}
+    \langle \Psi_{a}\mid \hat{A}\mid\Psi_{a}\rangle &=\langle \Psi_{1}+\Psi_{2}\mid \hat{A}\mid\Psi_{1}+\Psi_{2}\rangle\\
+    &=\langle \Psi_{1}\mid \hat{A} \mid \Psi_{1} \rangle+\langle \Psi_{2}\mid \hat{A} \mid \Psi_{2} \rangle+\langle \Psi_{2}\mid \hat{A} \mid \Psi_{1} \rangle+\langle \Psi_{1}\mid \hat{A} \mid \Psi_{2} \rangle
+\end{align*}
+\begin{align*}
+    \langle \Psi_{b}\mid \hat{A}\mid\Psi_{b}\rangle &=\langle \Psi_{1}+i\Psi_{2}\mid \hat{A}\mid\Psi_{1}+i\Psi_{2}\rangle\\
+    &=\langle \Psi_{1}\mid \hat{A} \mid \Psi_{1} \rangle+\langle \Psi_{2}\mid \hat{A} \mid \Psi_{2} \rangle-i(\langle \Psi_{2}\mid \hat{A} \mid \Psi_{1} \rangle-\langle \Psi_{1}\mid \hat{A} \mid \Psi_{2} \rangle)
+\end{align*}
+\textbf{ }\textbf{ }
+从上述两个式子等号左右对比，我们可以看出:$\langle \Psi_{2}\mid \hat{A} \mid \Psi_{1} \rangle+\langle \Psi_{1}\mid \hat{A} \mid \Psi_{2} \rangle$应为实数，而$\langle \Psi_{2}\mid \hat{A} \mid \Psi_{1} \rangle-\langle \Psi_{1}\mid \hat{A} \mid \Psi_{2} \rangle$应为虚数.
+
+$\mbox{令}\langle \Psi_{2}\mid \hat{A} \mid \Psi_{1} \rangle=A+Bi,\langle \Psi_{1}\mid \hat{A} \mid \Psi_{2} \rangle=C+Di$，则有:
+$$
+\textbf{ }\textbf{ }(A+C)+(B+D)i\mbox{为实数}\to B=-D
+$$
+$$
+(A-C)+(B-D)i\mbox{为虚数}\to A=C 
+$$
+\textbf{ }\textbf{ }
+即:$\langle \Psi_{1}\mid \hat{A} \mid \Psi_{2} \rangle=[\langle \Psi_{2}\mid \hat{A} \mid \Psi_{1} \rangle]^{*}$
+至此，由$\langle f \mid \hat{A} \mid f \rangle=[\langle f \mid \hat{A} \mid f \rangle]^{*}$导出了$\langle f \mid \hat{A} \mid g \rangle=[\langle g \mid \hat{A} \mid f \rangle]^{*}$.
+
+需要解释的是，可观测物理量测定值(力学量算符本征值)必须为实数，因此对算符有厄米性的要求.
+
+下面证明厄米算符的本征值为实数.
+
+Proof:
+$$\mbox{设厄米算符}\hat{A}\mbox{满足本征方程:}\hat{A}\Psi=a_{n}\Psi$$
+\textbf{ }\textbf{ }\textbf{ }\textbf{ }\textbf{ }\textbf{ }则有:
+\begin{align*}
+    \langle \Psi \mid \hat{A} \mid \Psi \rangle&=a\langle \Psi \mid \Psi \rangle=a\\
+    [\langle \Psi \mid \hat{A} \mid \Psi \rangle]^{*}&=[a\langle \Psi \mid \Psi \rangle]^{*}=a^{*}
+\end{align*}
+\textbf{ }\textbf{ }\textbf{ }\textbf{ }由于$\hat{A}$是厄米算符，因此$a=a^{*}$,至此，证明厄米算符的本征值为实数.
+
+\end{document}
